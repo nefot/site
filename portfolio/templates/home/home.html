@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %} {% load static %} {% block content %}
+<div class="big-section">
+  <div class="content-bg">
+    <div class="left-bg">
+      <p>САЙТ КОТОРЫЙ ВАМ ДАСТ</p>
+      <h1 class="bigger">CREATE YOUR FACE</h1>
+      <button class="btn btn-success" href="{}">получить по лицу</button>
+    </div>
+  </div>
+  <img src="{% static 'home/img/bg1.png' %} " class="bg1">
+</div>
+<div class="album py-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> {% for project in projects %} <div class="col">
+        <div class="card shadow-sm">
+          <img class="bd-placeholder-img card-img-top" style="object-fit: cover;" width="100%" height="225" src="{{ project.image.url }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+          <div class="card-body">
+            <p class="fs-3"> {{ project.title }} </p>
+            <p class="card-text">{{ project.subtitle }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+              <small class="text-muted">{{ project.time }}</small>
+            </div>
+          </div>
+        </div>
+      </div> {% endfor %} </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </div>
+</div>
+<hr>
+{% endblock %}
