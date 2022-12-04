@@ -77,6 +77,7 @@
  .card-body {
      background-color: #242424;
 }
+
  .card.shadow-sm {
     border-width: 4px;
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
@@ -126,4 +127,87 @@
      color: WHITE;
      margin: 0 20px;
      font-weight: 600;
+}
+ h6.center{
+     text-align: center;
+ }
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+.blockquote-6 {
+    max-width: 800px;
+    border-left: 6px solid #BFE2FF;
+    font-size: 16px;
+    font-style: italic;
+    margin: 16px;
+    padding: 16px 24px;
+    position: relative;
+}
+blockquote {
+    /* margin: 25px 49px 1rem; */
+    max-width: 1000px;
+    margin: auto;
+    font-style: italic;
+}
+.blockquote-6:before {
+
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    height: 40px;
+    background-color: #fff;
+    width: 6px;
+    margin-top: -1em;
+}
+.blockquote-6:after {
+    content: "”";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    color: #337AB7;
+    font-size: 50px;
+    font-family: Times, sans-serif;
+    font-weight: bold;
+    line-height: 30px;
+}
+.blockquote-6 cite {
+    color: #337AB7;
+    font-size: 15px;
+    padding-top: 10px;
+    display: block;
+    text-align: right;
 }
