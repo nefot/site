@@ -1,0 +1,162 @@
+$font-stack: Thillends, serif
+$primary-color: white
+$text-decoration: none
+$w: 600
+$herf-col:pink
+$bigH:650px
+$border: 15px
+$color1: #212529
+
+@mixin border
+  border: 2px solid
+
+
+@mixin text_a($fontW)
+  text-decoration: $text-decoration
+  color: $primary-color
+  font-weight: $fontW
+
+@mixin text_h($fontW,$al)
+  text-decoration: none
+  color: $primary-color
+  font-weight: $fontW
+  text-align: $al
+  margin: $border
+
+@mixin alignment($top:0px,$bottom:0px,$left:0px,$right:0px)
+  top: $top
+  bottom: $bottom
+  left: $left
+  right: $right
+
+@mixin citat
+  .blockquote-6
+    max-width: 95%
+    border-left: 6px solid #BFE2FF
+    font-size: $border
+    font-style: italic
+    margin: $border
+    padding: $border
+    position: relative
+    cite
+      color: #337AB7
+      font-size: $border
+      padding-top: $border
+      display: block
+      text-align: right
+
+@include citat
+
+h2
+  @include text_h(600, center)
+
+body
+    margin: 0 30px
+
+.big-section
+    position: relative
+    height: $bigH
+    color: white
+    background: radial-gradient(28.99% 89.01% at 54.66% 14.89%, rgba(60, 60, 60, 0) 0%, rgba(5, 5, 5, 0) 36.28%, #121212 100%, #121212 108%)
+    .content-bg
+      box-sizing: border-box
+      max-height: (100% / 2)
+      width: (100% / 3)
+      position: absolute
+      top: (($bigH - $bigH / 2) / 2)
+      left: 5%
+      text-align: left
+      margin: auto
+      h1
+        z-index: 1
+        text-shadow: #fc0 1px 0 10px
+        -webkit-text-stroke-width: thin
+        font-size: 60px
+        width: 80%
+        text-align: left
+    img
+      z-index: -1
+
+.btn.btn-success
+  background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%)
+  border-radius: $border
+  font-size: larger
+  margin: 5% 0 5% 0
+
+a
+  @include text_a(600)
+  margin: 0 (100% - 98%)
+
+header
+  padding: $border
+  text-decoration: $text-decoration
+
+
+
+  &:hover
+    color: $herf-col
+
+
+body
+  color: $primary-color
+  text-decoration: $text-decoration
+  background-color: rgba(18, 18, 18, 1)
+  text-decoration: $text-decoration
+
+img
+   max-width: 100%
+   opacity: 90%
+   position: relative
+   height: 100%
+   display: block
+   margin-left: auto
+   margin-right: auto
+   z-index: 1
+
+.container
+  p
+    @include text_h(400, left)
+
+.blog-content>h6
+    @include text_h(400, left)
+.blog_block>a
+   text-align: center
+.blog-content>h1
+  @include text_h(400, center)
+  text-align: center
+footer
+  left: 0px
+  position: absolute
+  margin-top: 577px
+  width: 100%
+  padding: $border
+  text-align: center
+
+  background-color: #000000
+
+h5
+  margin: 0
+
+.get_block
+  margin: $border
+  padding: $border
+  background-color: #151a21
+  border-radius: $border
+  .btn.btn-success
+    width: 20%
+    text-align: center
+    background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%)
+    font-size: larger
+    display: block
+    margin: 30px auto 30px auto
+  h1
+    text-align: center
+.blog_block
+  margin: $border
+  padding: $border
+  border-radius: $border
+  background-color: $color1
+  @include border
+
+.card-body
+  background-color: $color1

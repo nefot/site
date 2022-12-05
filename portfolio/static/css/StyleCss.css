@@ -1,0 +1,171 @@
+.blockquote-6 {
+  max-width: 95%;
+  border-left: 6px solid #BFE2FF;
+  font-size: 15px;
+  font-style: italic;
+  margin: 15px;
+  padding: 15px;
+  position: relative;
+}
+.blockquote-6 cite {
+  color: #337AB7;
+  font-size: 15px;
+  padding-top: 15px;
+  display: block;
+  text-align: right;
+}
+
+h2 {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin: 15px;
+}
+
+body {
+  margin: 0 30px;
+}
+
+.big-section {
+  position: relative;
+  height: 650px;
+  color: white;
+  background: radial-gradient(28.99% 89.01% at 54.66% 14.89%, rgba(60, 60, 60, 0) 0%, rgba(5, 5, 5, 0) 36.28%, #121212 100%, #121212 108%);
+}
+.big-section .content-bg {
+  box-sizing: border-box;
+  max-height: 50%;
+  width: 33.3333333333%;
+  position: absolute;
+  top: 162.5px;
+  left: 5%;
+  text-align: left;
+  margin: auto;
+}
+.big-section .content-bg h1 {
+  z-index: 1;
+  text-shadow: #fc0 1px 0 10px;
+  -webkit-text-stroke-width: thin;
+  font-size: 60px;
+  width: 80%;
+  text-align: left;
+}
+.big-section img {
+  z-index: -1;
+}
+
+.btn.btn-success {
+  background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%);
+  border-radius: 15px;
+  font-size: larger;
+  margin: 5% 0 5% 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin: 0 2%;
+}
+
+header {
+  padding: 15px;
+  text-decoration: none;
+}
+header:hover {
+  color: pink;
+}
+
+body {
+  color: white;
+  text-decoration: none;
+  background-color: rgb(18, 18, 18);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  opacity: 90%;
+  position: relative;
+  height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+
+.container p {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  margin: 15px;
+}
+
+.blog-content > h6 {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  margin: 15px;
+}
+
+.blog_block > a {
+  text-align: center;
+}
+
+.blog-content > h1 {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  margin: 15px;
+  text-align: center;
+}
+
+footer {
+  left: 0px;
+  position: absolute;
+  margin-top: 577px;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  background-color: #000000;
+}
+
+h5 {
+  margin: 0;
+}
+
+.get_block {
+  margin: 15px;
+  padding: 15px;
+  background-color: #151a21;
+  border-radius: 15px;
+}
+.get_block .btn.btn-success {
+  width: 20%;
+  text-align: center;
+  background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%);
+  font-size: larger;
+  display: block;
+  margin: 30px auto 30px auto;
+}
+.get_block h1 {
+  text-align: center;
+}
+
+.blog_block {
+  margin: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #212529;
+  border: 2px solid;
+}
+
+.card-body {
+  background-color: #212529;
+}
+
+/*# sourceMappingURL=StyleCss.css.map */

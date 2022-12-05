@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %} {% load static %} {% block content %}
     <h2>Админ скопировал с интернета {{blog.count}} поста:</h2> {% for blog in blog %} <div class="container margin">
-  <div class="bg-dark p-5 rounded">
+  <div class="blog_block">
     <a href="{% url 'detail' blog.id %}">
       <h1>{{ blog.title }}</h1>
     </a>
