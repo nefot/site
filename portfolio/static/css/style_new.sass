@@ -1,81 +1,144 @@
 $font-stack: Thillends, serif
-$primary-color: white
+$primary-color: #dedddd
 $text-decoration: none
 $w: 600
-$herf-col:pink
-$bigH:650px
-$border: 15px
-$color1: #212529
+$border_size: 1px
+$herf-col: pink
+$bigH: 650px
+$max-with: 80%
+$border: 8px
+$color1: #1f2022
+$type: none
 
-@mixin border
-  border: 2px solid
+/* Main Text Styles */
+$color_off: #0e3742
+$color_on: white
+$color_blom: rgb(3, 188, 244)
+=grid($cols,$margin )
+  justify-content: center
+  float: left
+  display: block
+  margin-left: auto
+  margin-right: $margin
+  margin-top: $margin
+  width: calc((100% - (($cols - 1) * ($margin + 2%))) / $cols)
+
+=button
+  background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%)
+  border-radius: $border
+  font-size: larger
+  margin: 5% 0 5% 0
+
+=left
+  max-width: 11em
+  min-height: 3em
+  margin-left: auto
+  margin-right: 0
 
 
-@mixin text_a($fontW)
+=text_a($fontW, $text_align)
   text-decoration: $text-decoration
   color: $primary-color
+  text-align: $text_align
   font-weight: $fontW
 
-@mixin text_h($fontW,$al)
-  text-decoration: none
+=text_h($fontW,$al)
+  text-decoration: $text-decoration
   color: $primary-color
   font-weight: $fontW
   text-align: $al
   margin: $border
 
-@mixin alignment($top:0px,$bottom:0px,$left:0px,$right:0px)
+=alignment($top:0px,$bottom:0px,$left:0px,$right:0px)
   top: $top
   bottom: $bottom
   left: $left
   right: $right
 
-@mixin citat
+=citat
   .blockquote-6
     max-width: 95%
     border-left: 6px solid #BFE2FF
-    font-size: $border
+    font-size: 15px
     font-style: italic
     margin: $border
     padding: $border
     position: relative
+
     cite
       color: #337AB7
-      font-size: $border
+      font-size: 20px
       padding-top: $border
       display: block
       text-align: right
 
 @include citat
+%border
+  border: $border_size solid
+  border-color: #9fb7e8
 
+%block
+  padding: 15px
+  background-color: $color1
+  margin: 15px 0 15px 0
+  border-radius: $border
+  @extend %border
+
+%section
+  padding: 10%
+
+*
+  text-decoration: $text-decoration
 h2
   @include text_h(600, center)
 
 body
-    margin: 0 30px
+  margin: 0 30px
 
 .big-section
-    position: relative
-    height: $bigH
-    color: white
-    background: radial-gradient(28.99% 89.01% at 54.66% 14.89%, rgba(60, 60, 60, 0) 0%, rgba(5, 5, 5, 0) 36.28%, #121212 100%, #121212 108%)
-    .content-bg
-      box-sizing: border-box
-      max-height: (100% / 2)
-      width: (100% / 3)
-      position: absolute
-      top: (($bigH - $bigH / 2) / 2)
-      left: 5%
+  @include button
+
+  .content-bg
+    box-sizing: border-box
+    max-height: calc(100% / 4)
+    width: calc(100% / 4)
+    position: absolute
+    top: calc(($bigH - $bigH / 2) / 2)
+    left: 5%
+    text-align: left
+    margin: auto
+
+    h1
+      color: #0e3742
+      font-size: 60px
       text-align: left
-      margin: auto
-      h1
-        z-index: 1
-        text-shadow: #fc0 1px 0 10px
-        -webkit-text-stroke-width: thin
-        font-size: 60px
-        width: 80%
-        text-align: left
-    img
-      z-index: -1
+      outline: none
+      @if $type == bloom
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0008)
+      @else if $type == matador
+        -webkit-box-reflect: none
+      animation: animate 5s linear infinite
+
+      @keyframes animate
+        0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%
+          color: $color_off
+          text-shadow: none
+        18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%
+          color: $color_on
+          text-shadow: 0 0 10px $color_blom, 0 0 20px $color_blom, 0 0 40px $color_blom, 0 0 80px $color_blom, 0 0 160px $color_blom
+
+      z-index: 1
+      text-shadow: #fc0 1px 0 10px
+      -webkit-text-stroke-width: thin
+      width: 80%
+
+
+  img
+
+    z-index: -1
+    min-height: 3em
+    margin-left: auto
+    margin-right: 0
 
 .btn.btn-success
   background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%)
@@ -83,15 +146,23 @@ body
   font-size: larger
   margin: 5% 0 5% 0
 
+
+.div
+  max-width: $max-with
+  margin: auto
+
+  h2, h1
+    text-align: left
+
+.div2
+  @include left
+
 a
-  @include text_a(600)
+  @include text_a(600 , center)
   margin: 0 (100% - 98%)
 
 header
   padding: $border
-  text-decoration: $text-decoration
-
-
 
   &:hover
     color: $herf-col
@@ -99,40 +170,45 @@ header
 
 body
   color: $primary-color
-  text-decoration: $text-decoration
   background-color: rgba(18, 18, 18, 1)
-  text-decoration: $text-decoration
+
 
 img
-   max-width: 100%
-   opacity: 90%
-   position: relative
-   height: 100%
-   display: block
-   margin-left: auto
-   margin-right: auto
-   z-index: 1
+  max-width: 100%
+  opacity: 90%
+  position: relative
+  height: 100%
+  display: block
+  margin-left: auto
+  margin-right: auto
+  z-index: 1
 
 .container
   p
     @include text_h(400, left)
 
-.blog-content>h6
-    @include text_h(400, left)
-.blog_block>a
-   text-align: center
-.blog-content>h1
+  max-width: 80%
+
+.blog-content > h6
+
+  @include text_h(400, left)
+
+.blog_block > a
+  text-align: center
+
+.blog-content > h1
   @include text_h(400, center)
   text-align: center
+
 footer
-  left: 0px
+  left: 0
   position: absolute
   margin-top: 577px
   width: 100%
   padding: $border
   text-align: center
-
   background-color: #000000
+
 
 h5
   margin: 0
@@ -142,6 +218,7 @@ h5
   padding: $border
   background-color: #151a21
   border-radius: $border
+
   .btn.btn-success
     width: 20%
     text-align: center
@@ -149,14 +226,91 @@ h5
     font-size: larger
     display: block
     margin: 30px auto 30px auto
+
   h1
     text-align: center
+
 .blog_block
-  margin: $border
-  padding: $border
-  border-radius: $border
-  background-color: $color1
-  @include border
+  @extend %block
+  @extend %border
+
+  p
+    text-align: right
+    color: #bebebe
+
+  h6
+    margin: 15px
 
 .card-body
   background-color: $color1
+
+
+$color2: #fff
+.col_spaces
+  width: 100%
+
+  > div
+    height: 100%
+    @include grid(3, 4%)
+    background-color: rgba(158, 158, 158, 0.31)
+    padding: 20px
+    border-radius: 5px
+    backdrop-filter: blur(15px)
+    border: 1px solid $color2
+    box-shadow: 0 0 5px $color2
+    letter-spacing: 1px
+    overflow: hidden
+    transition: 0, 45s
+    text-align: center
+    margin: auto
+
+    img
+      box-sizing: border-box
+      object-fit: cover
+      width: 100%
+      margin-bottom: 20px
+      border-bottom: 1px solid $color2
+      border-top: 1px solid $color2
+      height: 263px
+      border-radius: 5px
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.51)
+
+    p
+      margin: 0
+      text-align: left
+
+    hr
+      position: relative
+      top: -35px
+      margin: 0
+      z-index: -1
+
+    > div
+      width: fit-content
+      border: 20px
+      text-align: center
+
+    b
+      @include text_a(600, left)
+      &::before
+        content: " "
+        width: 100%
+
+    &::before
+      color: black
+      transition: 1s
+
+    &:hover::before
+      color: white
+      transition: 1s
+
+section
+  padding: 10%
+
+.bg
+  content: ""
+  position: absolute
+  left: 0
+  width: 100%
+  background: radial-gradient(65.59% 17.27% at -3.32% 17.41%, #B02000 0%, rgba(50, 0, 0, 0) 90.1%)
+  z-index: -2
