@@ -1,15 +1,11 @@
-/**************************************************************** */
 /* Main Text Styles */
-.blog_block {
+.btn.btn-success, .big-section > a, .blog_block {
   border: 1px solid;
   border-color: #9fb7e8;
 }
 
-.blog_block {
-  padding: 15px;
-  background-color: #1f2022;
-  margin: 15px 0 15px 0;
-  border-radius: 8px;
+h6 {
+  text-indent: 30px;
 }
 
 .blockquote-6 {
@@ -29,6 +25,17 @@
   text-align: right;
 }
 
+.blog_block {
+  padding: 15px;
+  background-color: #1f2022;
+  margin: 15px 0 15px 0;
+  border-radius: 8px;
+}
+
+* {
+  text-decoration: none;
+}
+
 h2 {
   text-decoration: none;
   color: #dedddd;
@@ -45,7 +52,16 @@ body {
   position: relative;
   height: 650px;
   color: white;
-  background: radial-gradient(24.99% 55.01% at 60.66% 44.89%, rgba(60, 62, 60, 0) 6%, rgba(5, 5, 5, 0) -9.72%, #121212 91%, #121212 173%);
+  background: radial-gradient(23.99% 89.01% at 64.66% 14.89%, rgba(60, 60, 60, 0) 0%, rgba(5, 5, 5, 0) 36.28%, #121212 100%, #121212 108%);
+}
+.big-section > a {
+  background: linear-gradient(337.26deg, rgb(3, 140, 23) 8.54%, rgb(3, 103, 166) 80.91%);
+  border-radius: 8px;
+  font-size: larger;
+  margin: 5% 0 5% 0;
+  box-shadow: 0px 4px 8px 0px #000;
+  animation: animates 5s linear infinite;
+  backdrop-filter: blur(15px);
 }
 .big-section .content-bg {
   box-sizing: border-box;
@@ -60,16 +76,13 @@ body {
 .big-section .content-bg h1 {
   color: #0e3742;
   font-size: 60px;
-  width: 100%;
   text-align: left;
   outline: none;
   animation: animate 5s linear infinite;
   z-index: 1;
   text-shadow: #fc0 1px 0 10px;
   -webkit-text-stroke-width: thin;
-  font-size: 60px;
   width: 80%;
-  text-align: left;
 }
 @keyframes animate {
   0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
@@ -89,10 +102,13 @@ body {
 }
 
 .btn.btn-success {
-  background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%);
+  background: linear-gradient(337.26deg, rgb(3, 140, 23) 8.54%, rgb(3, 103, 166) 80.91%);
   border-radius: 8px;
   font-size: larger;
   margin: 5% 0 5% 0;
+  box-shadow: 0px 4px 8px 0px #000;
+  animation: animates 5s linear infinite;
+  backdrop-filter: blur(15px);
 }
 
 .div {
@@ -113,13 +129,14 @@ body {
 a {
   text-decoration: none;
   color: #dedddd;
+  text-align: center;
   font-weight: 600;
   margin: 0 2%;
 }
 
 header {
   padding: 8px;
-  text-decoration: none;
+  box-shadow: 0px 4px 8px 0px #000;
 }
 header:hover {
   color: pink;
@@ -127,9 +144,7 @@ header:hover {
 
 body {
   color: #dedddd;
-  text-decoration: none;
   background-color: rgb(18, 18, 18);
-  text-decoration: none;
 }
 
 img {
@@ -195,14 +210,6 @@ h5 {
   background-color: #151a21;
   border-radius: 8px;
 }
-.get_block .btn.btn-success {
-  width: 20%;
-  text-align: center;
-  background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%);
-  font-size: larger;
-  display: block;
-  margin: 30px auto 30px auto;
-}
 .get_block h1 {
   text-align: center;
 }
@@ -221,8 +228,6 @@ h5 {
 
 .col_spaces {
   width: 100%;
-  text-align: center;
-  margin: auto;
 }
 .col_spaces > div {
   height: 100%;
@@ -235,13 +240,15 @@ h5 {
   width: 29.3333333333%;
   background-color: rgba(158, 158, 158, 0.31);
   padding: 20px;
+  height: 679px;
   border-radius: 5px;
   backdrop-filter: blur(15px);
   border: 1px solid #fff;
-  box-shadow: 0 0 5px #fff;
+  box-shadow: 0 0 5px #000;
   letter-spacing: 1px;
   overflow: hidden;
   transition: 0, 45s;
+  text-align: center;
 }
 .col_spaces > div img {
   box-sizing: border-box;
@@ -266,14 +273,14 @@ h5 {
 }
 .col_spaces > div > div {
   width: fit-content;
-  /* margin: auto; */
   border: 20px;
   text-align: center;
 }
 .col_spaces > div b {
+  text-decoration: none;
+  color: #dedddd;
   text-align: left;
-  font-weight: 500;
-  color: #fff;
+  font-weight: 600;
 }
 .col_spaces > div b::before {
   content: " ";
@@ -289,18 +296,22 @@ h5 {
 }
 
 section {
-  padding: 10%;
+  padding: 2% 10%;
 }
 
 .bg {
   content: "";
   position: absolute;
   left: 0;
-  height: 100%;
-  width: 100%;
   height: 500%;
-  background: radial-gradient(65.59% 17.27% at -3.32% 17.41%, #B02000 0%, rgba(50, 0, 0, 0) 90.1%);
+  width: 100%;
+  background: radial-gradient(65.59% 17.27% at -3.32% 17.41%, #24ff6c 0%, rgba(50, 0, 0, 0) 90.1%);
   z-index: -2;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=StyleCss.css.map */

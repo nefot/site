@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from portfolio.views import user
-from get_face.views import geting
+from portfolio.views import *
+from get_face.views import *
+
 urlpatterns = [
     path('get/', geting, name='get'),
     path('blog/', include('blog.urls')),
+    path('memes/', memes, name='memes'),
     path('', user, name='home'),
     path('admin/', admin.site.urls),
 ]

@@ -2,7 +2,7 @@ from encodings import search_function
 
 from django.contrib import admin
 
-from .models import Project
+from .models import *
 
 
 
@@ -18,3 +18,5 @@ class Person(admin.ModelAdmin):
 #     time
 
 admin.site.register(Project, Person)
+
+admin.site.register(Memes)

@@ -16,3 +16,4 @@ def editp(request):
     context = {}
     template = "blog/editPage.html"
     return render(request, template, context)
+

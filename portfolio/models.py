@@ -17,3 +17,16 @@ class Project(models.Model):
     class Meta:
         verbose_name = "Качка"
         verbose_name_plural = "Список качков"
+
+class Memes(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Название мема")
+    image = models.ImageField(upload_to='portfolio/images/', verbose_name="Фото качка")
+    time = models.DateTimeField(auto_now=False, default=timezone.now)
+
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Мемы"
+        verbose_name_plural = "Список Мемов"

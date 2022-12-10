@@ -9,11 +9,21 @@ $max-with: 80%
 $border: 8px
 $color1: #1f2022
 $type: none
-
+$color2: #fff
 /* Main Text Styles */
 $color_off: #0e3742
 $color_on: white
 $color_blom: rgb(3, 188, 244)
+
+%border
+  border: $border_size solid
+  border-color: #9fb7e8
+
+
+h6
+  text-indent: 30px
+
+
 =grid($cols,$margin )
   justify-content: center
   float: left
@@ -24,10 +34,17 @@ $color_blom: rgb(3, 188, 244)
   width: calc((100% - (($cols - 1) * ($margin + 2%))) / $cols)
 
 =button
-  background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%)
+  @extend %border
+  background: linear-gradient(337.26deg, rgb(3, 140, 23) 8.54%, rgb(3, 103, 166) 80.91%)
   border-radius: $border
   font-size: larger
   margin: 5% 0 5% 0
+  box-shadow: 0px 4px 8px 0px #000
+  animation: animates 5s linear infinite
+  backdrop-filter: blur(15px)
+
+
+
 
 =left
   max-width: 11em
@@ -73,9 +90,7 @@ $color_blom: rgb(3, 188, 244)
       text-align: right
 
 @include citat
-%border
-  border: $border_size solid
-  border-color: #9fb7e8
+
 
 %block
   padding: 15px
@@ -96,7 +111,12 @@ body
   margin: 0 30px
 
 .big-section
-  @include button
+  position: relative
+  height: $bigH
+  color: white
+  background: radial-gradient(23.99% 89.01% at 64.66% 14.89%, rgba(60, 60, 60, 0) 0%, rgba(5, 5, 5, 0) 36.28%, #121212 100%, #121212 108%)
+  > a
+        @include button
 
   .content-bg
     box-sizing: border-box
@@ -107,6 +127,7 @@ body
     left: 5%
     text-align: left
     margin: auto
+
 
     h1
       color: #0e3742
@@ -141,10 +162,7 @@ body
     margin-right: 0
 
 .btn.btn-success
-  background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%)
-  border-radius: $border
-  font-size: larger
-  margin: 5% 0 5% 0
+  @include button
 
 
 .div
@@ -163,9 +181,11 @@ a
 
 header
   padding: $border
-
+  box-shadow: 0px 4px 8px 0px #000
   &:hover
     color: $herf-col
+
+
 
 
 body
@@ -219,13 +239,7 @@ h5
   background-color: #151a21
   border-radius: $border
 
-  .btn.btn-success
-    width: 20%
-    text-align: center
-    background: linear-gradient(265.26deg, rgba(3, 140, 23, 0.25) 8.54%, rgba(3, 103, 166, 0.25) 80.91%)
-    font-size: larger
-    display: block
-    margin: 30px auto 30px auto
+
 
   h1
     text-align: center
@@ -245,7 +259,7 @@ h5
   background-color: $color1
 
 
-$color2: #fff
+
 .col_spaces
   width: 100%
 
@@ -254,15 +268,16 @@ $color2: #fff
     @include grid(3, 4%)
     background-color: rgba(158, 158, 158, 0.31)
     padding: 20px
+    height: 679px
     border-radius: 5px
     backdrop-filter: blur(15px)
     border: 1px solid $color2
-    box-shadow: 0 0 5px $color2
+    box-shadow: 0 0 5px #000
     letter-spacing: 1px
     overflow: hidden
     transition: 0, 45s
     text-align: center
-    margin: auto
+
 
     img
       box-sizing: border-box
@@ -305,12 +320,17 @@ $color2: #fff
       transition: 1s
 
 section
-  padding: 10%
+  padding: 2% 10%
 
 .bg
   content: ""
   position: absolute
   left: 0
+  height: 500%
   width: 100%
-  background: radial-gradient(65.59% 17.27% at -3.32% 17.41%, #B02000 0%, rgba(50, 0, 0, 0) 90.1%)
+  background: radial-gradient(65.59% 17.27% at -3.32% 17.41%, #24ff6c 0%, rgba(50, 0, 0, 0) 90.1%)
   z-index: -2
+
+.center
+  text-align: center
+  margin-left: auto
